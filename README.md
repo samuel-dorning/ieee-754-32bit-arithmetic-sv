@@ -4,7 +4,8 @@ This repo contains four files:
   multiplier.sv - Synthesizable 32-bit floating point multiplier  
   tb_adder.sv - Testbench for adder module  
   tb_multiplier.sv - Testbench for multiplier module  
-  
+    
+      
 Both the adder module and multiplier module have the same interfaces:  
   Inputs:  
     -reset_n - active low reset to put state machine into known state  
@@ -16,7 +17,7 @@ Both the adder module and multiplier module have the same interfaces:
   Outputs:  
     -data_out (32 bits) - The result of the operation  
     -output_valid - When high, the result found in "data_out" is valid. When this is low, the data may not be ready yet. This will only stay high for one clock cycle.  
-
+  
 Both of these modules work the same from a black box perspective:  
   -Assert reset_n to put state machine into a known state   
   -Assert input_valid for one clock cycle when data in in_a and in_b have valid data  

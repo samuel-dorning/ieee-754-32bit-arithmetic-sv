@@ -7,6 +7,7 @@ This repo contains four files:
     
       
 Both the adder module and multiplier module have the same interfaces:  
+  
   Inputs:  
     -reset_n - active low reset to put state machine into known state  
     -clk - clock signal  
@@ -14,6 +15,7 @@ Both the adder module and multiplier module have the same interfaces:
     -in_b (32 bits) - The other operand to use in the operation  
     -input_valid - A signal to let the state machine know that the present in_a and in_b values are valid and should have the operation performed on them.
                   Assert this high for one clock cycle  
+                    
   Outputs:  
     -data_out (32 bits) - The result of the operation  
     -output_valid - When high, the result found in "data_out" is valid. When this is low, the data may not be ready yet. This will only stay high for one clock cycle.  

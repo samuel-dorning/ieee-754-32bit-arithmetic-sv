@@ -26,10 +26,10 @@ Both of these modules work the same from a black box perspective:
 The testbenches both require a file of inputs to feed the module. Each line in the file should consist of a comma separated pair of numbers. The pair of numbers 
 correspond to in_a and in_b. Ex:
 
-0.29345345,102.4534534
-3523423.12312,7567.123124
-123.5457,141364.2452452
-...
+0.29345345,102.4534534  
+3523423.12312,7567.123124  
+123.5457,141364.2452452  
+...  
 
 Update the filename in the testbench to use the file you create.
 

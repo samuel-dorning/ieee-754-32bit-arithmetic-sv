@@ -1,5 +1,9 @@
-# ieee-754-32bit-arithmetic-sv
-This repo contains four files:  
+# ieee_754_addition_and_multiplication_sv
+
+This repo contains synthesizable IEEE-754 floating point addition and multiplication modules written in SystemVerilog.
+
+
+The rtl/ directory contains four files:  
   adder.sv - Synthesizeable 32-bit floating point adder  
   multiplier.sv - Synthesizable 32-bit floating point multiplier  
   tb_adder.sv - Testbench for adder module  

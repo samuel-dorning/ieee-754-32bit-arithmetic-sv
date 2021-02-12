@@ -8,7 +8,7 @@ while getopts "q" opt; do
 			  ;;
 	esac
 done
-~/intelFPGA_lite/20.1/modelsim_ase/bin/vlog ./rtl/tb_multiplier.sv ./rtl/multiplier.sv
+~/intelFPGA_lite/20.1/modelsim_ase/bin/vlog ./rtl/tb_multiplier.sv ./rtl/multiplier.sv -warning error
 if [ $QUIET -eq 1 ]
 then
 	CMD="~/intelFPGA_lite/20.1/modelsim_ase/bin/vsim -do ./scripts/sim_multiplier_quiet.do -quiet -c"

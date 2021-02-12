@@ -210,9 +210,9 @@ begin
 		INIT:
 			ns = STO;
 		STO:
-			if(exp_diff > MANT_BITS || data_a[EXP_BITS+MANT_BITS-1:MANT_BITS] == {EXP_BITS{1'b1}} || data_b[EXP_BITS+MANT_BITS-1:MANT_BITS] == {EXP_BITS{1'b1}})
+			if(exp_diff > MANT_BITS || data_a[EXP_BITS+MANT_BITS-1:MANT_BITS] == {EXP_BITS{1}} || data_b[EXP_BITS+MANT_BITS-1:MANT_BITS] == {EXP_BITS{1'b1}})
 				ns = RES;
-			else if(e1 == e2 && data_a[EXP_BITS+MANT_BITS-1:MANT_BITS] != {EXP_BITS{1'b1}} && data_b[EXP_BITS+MANT_BITS-1:MANT_BITS] != {EXP_BITS{1'b1}})
+			else if(e1 == e2 && data_a[EXP_BITS+MANT_BITS-1:MANT_BITS] != {EXP_BITS{1}} && data_b[EXP_BITS+MANT_BITS-1:MANT_BITS] != {EXP_BITS{1'b1}})
 				ns = ADD;
 			else
 				ns = SHIFT;

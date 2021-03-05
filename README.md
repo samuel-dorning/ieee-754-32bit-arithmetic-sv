@@ -1,4 +1,4 @@
-# ieee_754_addition_and_multiplication_sv
+# ieee_754_arithmetic_sv
 
 This repo contains synthesizable IEEE-754 floating point addition and multiplication modules written in SystemVerilog.
 

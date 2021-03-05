@@ -1,6 +1,6 @@
 `timescale 1ps/1ps
 
-module tb_multiplier();
+module tb_divider();
 
 
 
@@ -78,7 +78,7 @@ initial begin
 			#(CYCLE);
 		end
 		result = toreal(data_out);
-		expected_result = toreal(in_a) * toreal(in_b);
+		expected_result = toreal(in_a) / toreal(in_b);
 		if(tobits(expected_result) == data_out)
 			percent_difference = 0.0;
 		else if(abs(expected_result) < 1e-40 && abs(result) < 1e-40)
@@ -116,7 +116,7 @@ initial begin
 end
 
 
-multiplier #(MANT_BITS,EXP_BITS) mult0(
+divider #(MANT_BITS,EXP_BITS) div0(
 	.clk			(clk),
 	.reset_n		(reset_n),
 	.input_valid	(input_valid),
@@ -168,11 +168,14 @@ begin
 		result = $realtobits(num);
 	end
 	else begin
-		for(e = 2**(EXP_BITS-1); e > -(2**(EXP_BITS-1)); e--) begin
+		for(e = 2**(EXP_BITS-1); e > -(2**(EXP_BITS-1)); e--) begin //for e in range(MAX_EXP, MIN_EXP)
+			//Test the exponent to see if mant is in the correct range:
 			if(num < 0)
 				mant = -num/(2**e);
 			else
 				mant = num/(2**e);
+			//See if mant is in correct range. Break if it is, continue loop
+				//if it isn't:
 			if((e >= -(2**(EXP_BITS-1)) + 2) && (mant < 2 && mant >= 1)) begin
 				break;
 			end

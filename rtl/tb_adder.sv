@@ -177,8 +177,7 @@ begin
 			if((e >= -(2**(EXP_BITS-1)) + 2) && (mant < 2 && mant >= 1)) begin
 				break;
 			end
-			else if((e == -(2**(EXP_BITS-1)) + 1) && (mant < 1 && mant >= 0)) begin
-				e = -(2**(EXP_BITS-1)) + 2;
+			else if((e == -(2**(EXP_BITS-1)) + 2) && (mant < 1 && mant >= 0)) begin
 				break;
 			end
 		end

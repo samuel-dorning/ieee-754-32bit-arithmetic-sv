@@ -2,8 +2,18 @@ import os
 import sys
 import random
 
+#Half precision:
 max_exp = 15
 min_exp = -14
+
+#Single precision:
+#max_exp = 127
+#min_exp = -126
+
+#Double precision:
+#max_exp = 1023
+#min_exp = -1022
+
 num = int(sys.argv[1])
 file = open("./scripts/rndm_nums.csv","w")
 
